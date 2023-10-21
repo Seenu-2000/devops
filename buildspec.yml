@@ -12,4 +12,5 @@ artifacts:
 post_build:
   commands:
     # Assuming you've configured your AWS CLI with credentials
-    - aws s3 sync dist/devops/ s3://task-1dev2000 
+    - aws s3 sync dist/devops/ s3://task-1dev2000 --exclude "dist/devops/*"
+
