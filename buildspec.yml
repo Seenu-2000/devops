@@ -11,7 +11,7 @@ artifacts:
 
 post_build:
   commands:
-    # Assuming you've configured your AWS CLI with credentials
-    - aws s3 cp /devops/ s3://task-1dev2000/ --recursive --include "*.*"
+    - find dist/devops -type f -exec aws s3 cp {} s3://task-1dev2000/{} \;
+
 
 
