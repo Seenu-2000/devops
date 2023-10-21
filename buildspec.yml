@@ -16,4 +16,4 @@ phases:
 post_build:
     commands:
       - echo "Updating files in the S3 bucket..."
-      - aws s3 sync dist/devops/ s3://task-1dev2000 --delete
+      - aws s3 sync dist/devops/ s3://task-1dev2000 
