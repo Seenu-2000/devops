@@ -11,7 +11,9 @@ artifacts:
 
 post_build:
   commands:
-    - find dist/devops -type f -exec aws s3 cp {} s3://task-1dev2000/{} \;
+    - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
+    - cd /tmp/devops-repo
+    - find . -type f -exec aws s3 cp {} s3://task-1dev2000/{} \;
 
 
 
