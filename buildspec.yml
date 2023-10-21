@@ -3,17 +3,17 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18  # Use a more recent Node.js version (adjust as needed)
-    commands:
-      - echo "Installing dependencies..."
-      - npm config set package-lock false  # Disable package-lock.json to avoid issues
-      - npm install -g @angular/cli@10.0.8
-
+      nodejs: 18  # or choose an appropriate Node.js version
   build:
     commands:
-      - echo "Building Angular project..."
+      - npm install
+      - npm run build  # Adjust this command as needed
+
+artifacts:
+  files:
+    - '**/*'
 
 post_build:
-    commands:
-      - echo "Updating files in the S3 bucket..."
-      - aws s3 sync dist/devops/ s3://task-1dev2000 
+  commands:
+    # Assuming you've configured your AWS CLI with credentials
+    - aws s3 sync dist/devops/ s3://task-1dev2000 
