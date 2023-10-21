@@ -4,16 +4,14 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
+
   build:
     commands:
       - echo Build started on `date`
       # You can add commands to build your project here if needed.
 
 artifacts:
-  files:
-    - index.html
-    - styles.css
-    # Add any other necessary files here
+  files: '**/*'  # Include all files in the output as individual artifacts
 
 cache:
   paths:
