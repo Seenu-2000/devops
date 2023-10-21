@@ -1,19 +1,7 @@
 version: 0.2
 
-phases:
-  install:
-    runtime-versions:
-      nodejs: 18  # or choose an appropriate Node.js version
-      
-artifacts:
-  files:
-    - '**/*'
-
 post_build:
   commands:
-    - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
-    - cd /tmp/devops-repo
-    - find . -type f -exec aws s3 cp {} s3://task-1dev2000/{} \;
-
+    - aws s3 sync dist/devops/ s3://task-1dev2000 
 
 
