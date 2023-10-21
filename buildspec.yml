@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install: 
     commands:
-      - npm install -g npm@latest
+      - npm i npm
       - pip install --upgrade pip
       - pip install --upgrade awscli
   pre_build:
