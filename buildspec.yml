@@ -7,7 +7,6 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - npm config set package-lock false  # Disable package-lock.json to avoid issues
-      - npm install --legacy-peer-deps  # Use --legacy-peer-deps to handle peer dependency warnings
       - npm install -g @angular/cli@10.0.8
 
   build:
