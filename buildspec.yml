@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14  # Use a more recent Node.js version (adjust as needed)
+      nodejs: 18  # Use a more recent Node.js version (adjust as needed)
     commands:
       - echo "Installing dependencies..."
       - npm config set package-lock false  # Disable package-lock.json to avoid issues
