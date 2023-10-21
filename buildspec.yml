@@ -1,20 +1,17 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 18
+  install: 
+    commands:
+      - npm i npm@latest -g
+      - pip install --upgrade pip
+      - pip install --upgrade awscli
+  pre_build:
+    commands:
+      - npm install
   build:
     commands:
-      - echo Build started on `date`
-      # You can add commands to build your project here if needed.
-
-artifacts:
-  files:
-    - index.html
-    - styles.css
-    # Add any other necessary files here
-
-cache:
-  paths:
-    - '/root/.npm' # Add any other paths to cache as needed
+      - npm run build:$ENVIRONMENT
+  post_build:
+    commands:
+      - aws s3 sync ./build $S3_BUCKET 
