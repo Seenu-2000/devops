@@ -4,9 +4,10 @@ phases:
   pre_build:
     commands:
       - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
+
   build:
     commands:
-      - aws s3 sync /tmp/devops-repo/ s3://task-1dev2000
+      - aws s3 sync /tmp/devops-repo/ s3://task-1dev2000 --exclude ".git/*" --exclude "task/*"
 
 artifacts:
   files: '**/*'
