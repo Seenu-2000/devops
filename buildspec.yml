@@ -1,7 +1,12 @@
 version: 0.2
 
-post_build:
-  commands:
-    - aws s3 sync dist/devops/ s3://task-1dev2000 
+phases:
+  pre_build:
+    commands:
+      - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
+  build:
+    commands:
+      - aws s3 sync /tmp/devops-repo/ s3://task-1dev2000
 
-
+artifacts:
+  files: '**/*'
