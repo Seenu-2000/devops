@@ -2,8 +2,5 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Debugging information:"
-      - aws configure list
-      - aws s3 ls
       - echo "Uploading files to the S3 bucket..."
       - aws s3 sync dist/devops/ s3://task-1dev2000/ --recursive
