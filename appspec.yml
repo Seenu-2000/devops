@@ -9,21 +9,21 @@ files:
 
 hooks:
   BeforeInstall:
-    - location: before_install.sh
+    - location: /task/before_install.sh
       timeout: 60
-      runas: ubuntu
+      runas: root
 
   AfterInstall:
-    - location: after_install.sh
+    - location: /task/after_install.sh
       timeout: 60
-      runas: ubuntu
+      runas: root
 
   ApplicationStart:
-    - location: start_server.sh
+    - location: /task/start_server.sh
       timeout: 60
-      runas: ubuntu
+      runas: root
 
   ApplicationStop:
-    - location: stop_server.sh
+    - location: /task/stop_server.sh
       timeout: 60
-      runas: ubuntu
+      runas: root
