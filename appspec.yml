@@ -3,8 +3,8 @@ version: 0.0
 os: ubuntu
 
 files:
-  - source: /test-1devops/task/
-    destination: /var/www/
+  - source: /test-1devops/
+    destination: /var/www/html/
 
 hooks:
   BeforeInstall:
