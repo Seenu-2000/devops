@@ -8,7 +8,8 @@ phases:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      - echo Build started on `date` --exclude ".git/*" --exclude "task/*"
+      - echo Build started on `date`
+      - rsync -av --exclude=".git" --exclude="task" source/ destination/
   post_build:
     commands:
       - echo Build completed on `date`
