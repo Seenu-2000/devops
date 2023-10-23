@@ -3,7 +3,7 @@ version: 0.0
 os: ubuntu
 
 files:
-  - source: /test-1devops/task
+  - source: /test-1devops/task/
     destination: /var/www/
 
 hooks:
