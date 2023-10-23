@@ -14,6 +14,7 @@ phases:
     commands:
       - aws s3 sync /tmp/devops-repo/ s3://test-1devops --exclude ".git/*" --exclude "task/*"
       - cd /tmp/devops-repo  # Change to the repository directory
+      - npm cache clean -f  # Clear the npm cache
       - npm install  # Install JavaScript dependencies using npm
 
   post_build:
