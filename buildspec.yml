@@ -1,18 +1,25 @@
 version: 0.2
 phases:
   install:
+    runtime-versions:
+      nodejs: 18  # Use the Node.js version you need
     commands:
       - echo Nothing to do in the install phase...
+
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
+
   build:
     commands:
-      - echo Build started on `date`
-      - rsync -av --exclude=".git" --exclude="task" source/ destination/
+      - aws s3 sync /tmp/devops-repo/ s3://test-1devops --exclude ".git/*" --exclude "task/*"
+      - cd /tmp/devops-repo  # Change to the repository directory
+      - npm install  # Install JavaScript dependencies using npm
+
   post_build:
     commands:
       - echo Build completed on `date`
+
 artifacts:
   files:
     - '**/*'
