@@ -5,24 +5,25 @@ os: ubuntu
 files:
   - source: /test-1devops/
     destination: /var/www/html/
+    overwrite: true
 
 hooks:
   BeforeInstall:
     - location: before_install.sh
       timeout: 60
-      runas: root
+      runas: ubuntu
 
   AfterInstall:
     - location: after_install.sh
       timeout: 60
-      runas: root
+      runas: ubuntu
 
   ApplicationStart:
     - location: start_server.sh
       timeout: 60
-      runas: root
+      runas: ubuntu
 
   ApplicationStop:
     - location: stop_server.sh
       timeout: 60
-      runas: root
+      runas: ubuntu
