@@ -7,7 +7,7 @@ phases:
 
   build:
     commands:
-      - aws s3 sync /tmp/devops-repo/ s3://task-1dev2000 --exclude ".git/*" --exclude "task/*"
+      - aws s3 sync /tmp/devops-repo/ s3://test-1devops --exclude ".git/*" --exclude "task/*"
 
 artifacts:
   files: '**/*'
