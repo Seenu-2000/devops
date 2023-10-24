@@ -3,27 +3,27 @@ version: 0.0
 os: ubuntu
 
 files:
-  - source: /test-1devops/
+  - source: /tmp/devops-repo/
     destination: /var/www/html/
     overwrite: true
 
 hooks:
   BeforeInstall:
-    - location: /task/before_install.sh
+    - location: /tmp/devops-repo/before_install.sh
       timeout: 60
       runas: root
 
   AfterInstall:
-    - location: /task/after_install.sh
+    - location: /tmp/devops-repo/after_install.sh
       timeout: 60
       runas: root
 
   ApplicationStart:
-    - location: /task/start_server.sh
+    - location: /tmp/devops-repo/start_server.sh
       timeout: 60
       runas: root
 
   ApplicationStop:
-    - location: /task/stop_server.sh
+    - location: /tmp/devops-repo/stop_server.sh
       timeout: 60
       runas: root
