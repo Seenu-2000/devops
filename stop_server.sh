@@ -1,9 +1,14 @@
 #!/bin/bash
+set -e
 
-# Check if a Node.js application is running
-isExistApp="$(pgrep node)"
+# Navigate to the home directory of the "ubuntu"
+cd /home/ubuntu
 
-if [[ -n $isExistApp ]]; then
-  # Stop the Apache service (replace 'apache2' with your service name)
-  systemctl stop apache2 
-fi
+# Stop the Node.js application, if it's running
+# Specify the script you want to stop, e.g., "node nodescript.js"
+
+# If you're using PM2:
+# pm2 stop nodescript.js
+
+# If you're running your application directly:
+# pkill -f "node nodescript.js"
