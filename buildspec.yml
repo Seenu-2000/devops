@@ -10,9 +10,11 @@ phases:
       - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
   build:
     commands:
-      - aws s3 sync /tmp/devops-repo/ s3://test-1devops --exclude ".git/*" 
+      - cd /tmp/devops-repo
+      - zip -r deployment.zip .  # Create a ZIP archive of all files in the directory
   post_build:
     commands:
+      - aws s3 cp /tmp/devops-repo/deployment.zip s3://test-1devops/deployment.zip  # Upload the ZIP archive to S3
       - echo Build completed on `date`
 artifacts:
   files:
