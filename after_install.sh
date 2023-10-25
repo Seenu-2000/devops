@@ -4,9 +4,6 @@ set -e
 # changing owner permission
 sudo chown -R ubuntu:ubuntu /var/www/myapp
 
-# move the package.json file to the target directory
-mv /home/ubuntu/task/package.json /var/www/myapp/
-
 # move the nodescript.js file to the target directory
 mv /home/ubuntu/task/nodescript.js /var/www/myapp/
 
