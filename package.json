@@ -4,9 +4,9 @@
   "description": "My Node.js Application",
   "main": "nodescript.js",
   "dependencies": {
-    "express": "^4.17.1"   // Replace with your actual dependencies
+    "express": "^4.17.1"
   },
   "scripts": {
-    "start": "node nodescript.js"  // Replace with the name of your entry script
+    "start": "node nodescript.js"
   }
 }
