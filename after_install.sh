@@ -2,17 +2,18 @@
 set -e
 
 # Create the application directory if it doesn't exist
-sudo mkdir /var/www/myapp
-sudo chown -R ubuntu:ubuntu /var/www/myapp
+cd /var/
+sudo mkdir www/myapp/
+sudo chown -R ubuntu:ubuntu /var/www/myapp/
 
 # Navigate to the source directory
-cd /home/ubuntu/task
+cd /home/ubuntu/task/
 
 # Copy the package.json file to the target directory
 cp package.json /var/www/myapp/
 
 # Navigate to the target directory
-cd /var/www/myapp
+cd /var/www/myapp/
 
 # Install Node.js application dependencies using NPM
 npm install
