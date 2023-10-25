@@ -24,4 +24,5 @@ artifacts:
     - 'start_server.sh'
     - 'stop_server.sh'
     - 'nodescript.js'
+    
   
