@@ -2,6 +2,12 @@
 set -e
 
 # Navigate to the application directory
+cd /home/ubuntu/task
+
+# Copy the package.json file to the target directory
+cp package.json /var/www/myapp/
+
+# Navigate to the application directory
 cd /var/www/myapp
 
 # Install Node.js application dependencies using NPM
