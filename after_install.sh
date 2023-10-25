@@ -11,10 +11,10 @@ mv /home/ubuntu/task/nodescript.js /var/www/myapp/
 cd /var/www/myapp
 
 # Install Node.js application dependencies using NPM
-npm install
+sudo npm install
 
 # Install PM2 globally (if not already installed)
-npm install -g pm2
+sudo npm install -g pm2
 
 # Start your Node.js application with the locally installed PM2
 ./node_modules/.bin/pm2 start nodescript.js
