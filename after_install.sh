@@ -1,13 +1,16 @@
 #!/bin/bash
 set -e
 
-# Navigate to the application directory
+# Create the application directory if it doesn't exist
+mkdir -p /var/www/myapp
+
+# Navigate to the source directory
 cd /home/ubuntu/task
 
 # Copy the package.json file to the target directory
 cp package.json /var/www/myapp/
 
-# Navigate to the application directory
+# Navigate to the target directory
 cd /var/www/myapp
 
 # Install Node.js application dependencies using NPM
