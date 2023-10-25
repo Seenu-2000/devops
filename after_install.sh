@@ -2,7 +2,8 @@
 set -e
 
 # Create the application directory if it doesn't exist
-mkdir -p /var/www/myapp
+sudo mkdir /var/www/myapp
+sudo chown -R ubuntu:ubuntu /var/www/myapp
 
 # Navigate to the source directory
 cd /home/ubuntu/task
