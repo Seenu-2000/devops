@@ -1,5 +1,10 @@
 #!/bin/bash
+set -e
 
-# Remove existing content in the /var/www/html directory
-rm -rf /var/www/html/*
+# Update and upgrade the system packages
+sudo apt-get update
+sudo apt-get upgrade -y
 
+# Install Node.js and NPM
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
