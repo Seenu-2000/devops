@@ -3,12 +3,6 @@ set -e
 
 sudo chown -R ubuntu:ubuntu /var/www/myapp
 
-# Navigate to the source directory
-cd /home/ubuntu/task/
-
-# Copy the package.json file to the target directory
-cp package.json /var/www/myapp/
-
 # Navigate to the target directory
 cd /var/www/myapp/
 
