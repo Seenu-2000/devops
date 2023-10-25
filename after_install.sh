@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
-# This script is intentionally left empty in this example. 
-# You can add post-installation tasks here if needed, such as configuring environment variables or setting up your application's dependencies.
-
 # Navigate to the application directory
 cd /var/www/myapp
 
-# Install Node.js application dependencies
-# npm install
+# Install Node.js application dependencies using NPM
+npm install
 
-# Additional tasks can be added here as required.
+# Additional application-specific post-installation tasks can be added here
+# For example, you can configure environment variables or set up your application database.
+
+# Note that you should customize these scripts to match your application's specific requirements.
