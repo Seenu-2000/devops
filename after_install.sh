@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-# changing owner permission
+# Changing owner permission
 sudo chown -R ubuntu:ubuntu /var/www/myapp
 
-# move the nodescript.js file to the target directory
+# Move the nodescript.js file to the target directory
 mv /home/ubuntu/task/nodescript.js /var/www/myapp/
 
 # Navigate to the target directory
@@ -13,7 +13,7 @@ cd /var/www/myapp
 # Install Node.js application dependencies using NPM
 npm install
 
-# Additional application-specific post-installation tasks can be added here
-# For example, you can configure environment variables or set up your application database.
+# Install PM2 globally (if not already installed)
+npm install -g pm2
 
-# Note that you should customize these scripts to match your application's specific requirements.
+
