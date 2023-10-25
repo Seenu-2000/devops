@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/myapp/
+    destination: /home/ubuntu/task/
 permissions:
-  - object: /var/www/myapp
+  - object: /home/ubuntu
     owner: ubuntu
     group: ubuntu
 hooks:
