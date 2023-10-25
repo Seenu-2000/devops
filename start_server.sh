@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-# Navigate to the home directory of the "ubuntu"
-cd /var/www/myapp
+# Navigate to the appropriate directory where nodescript.js is located
+cd /path/to/your/app/directory
 
-# Start the Node.js application using the "start" script from package.json
-npm start
+# Run your Node.js application
+node nodescript.js
