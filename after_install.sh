@@ -16,4 +16,7 @@ npm install
 # Install PM2 globally (if not already installed)
 npm install -g pm2
 
+# Start your Node.js application with the locally installed PM2
+./node_modules/.bin/pm2 start nodescript.js
+
 
