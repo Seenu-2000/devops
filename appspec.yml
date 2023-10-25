@@ -1,29 +1,26 @@
 version: 0.0
-
 os: ubuntu
-
 files:
-  - source: /tmp/devops-repo/
-    destination: /var/www/html/
-    overwrite: true
-
+  - source: s3://test-1devops/
+    destination: /home/ubuntu/task/
+permissions:
+  - object: /home/ubuntu
+    owner: ubuntu
+    group: ubuntu
 hooks:
   BeforeInstall:
-    - location: /tmp/devops-repo/before_install.sh
-      timeout: 60
-      runas: root
-
+    - location: before_install.sh
+      timeout: 300
+      runas: ubuntu
   AfterInstall:
-    - location: /tmp/devops-repo/after_install.sh
-      timeout: 60
-      runas: root
-
+    - location: after_install.sh
+      timeout: 300
+      runas: ubuntu
   ApplicationStart:
-    - location: /tmp/devops-repo/start_server.sh
-      timeout: 60
-      runas: root
-
+    - location: start_server.sh
+      timeout: 300
+      runas: ubuntu
   ApplicationStop:
-    - location: /tmp/devops-repo/stop_server.sh
-      timeout: 60
-      runas: root
+    - location: stop_server.sh
+      timeout: 300
+      runas: ubuntu
