@@ -10,7 +10,6 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Hook: AfterInstall
-sudo mkdir -p /var/www/myapp
 sudo chown -R ubuntu:ubuntu /var/www/myapp
 mv /home/ubuntu/myfiles/package.json /var/www/myapp/
 mv /home/ubuntu/myfiles/nodescript.js /var/www/myapp
