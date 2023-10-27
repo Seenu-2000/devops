@@ -21,5 +21,6 @@ artifacts:
     - 'appspec.yml'
     - 'nodescript.js'
     - 'package.json'
+    - 'deploy.sh'
     
   
