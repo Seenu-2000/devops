@@ -40,3 +40,4 @@ artifacts:
   files:
     - 'nodescript.js'
     - 'package.json'
+    - 'appspec.yml'
