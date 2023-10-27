@@ -12,7 +12,7 @@ sudo apt-get install -y nodejs
 # Hook: AfterInstall
 sudo chown -R ubuntu:ubuntu /var/www/myapp
 mv /home/ubuntu/myfiles/package.json /var/www/myapp/
-mv /home/ubuntu/myfiles/nodescript.js /var/www/myapp
+mv /home/ubuntu/myfiles/nodescript.js /var/www/myapp/
 cd /var/www/myapp
 sudo npm install
 sudo npm install -g pm2
