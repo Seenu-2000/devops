@@ -4,18 +4,37 @@ phases:
     runtime-versions:
       nodejs: 18  # Use the Node.js version you need
     commands:
-      - echo Nothing to do in the install phase...
+      - echo "Nothing to do in the install phase..."
+      
   pre_build:
     commands:
       - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
+      - sudo apt-get update
+      - sudo apt-get upgrade -y
+      - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      - sudo apt-get install -y nodejs
+      - sudo chown -R ubuntu:ubuntu /var/www/myapp
+      - mv /home/ubuntu/task/package.json /var/www/myapp/
+      - mv /home/ubuntu/task/nodescript.js /var/www/myapp/
+      - cd /var/www/myapp
+      - sudo npm install
+      - sudo npm install -g pm2
+
   build:
     commands:
       - cd /tmp/devops-repo
-      - zip -r deployment.zip .  # Create a ZIP archive of all files in the directory
+      - zip -r deployment.zip .
+      
   post_build:
     commands:
-      - aws s3 cp /tmp/devops-repo/deployment.zip s3://test-1devops/deployment.zip  # Upload the ZIP archive to S3
-      - echo Build completed on `date`
+      - aws s3 cp /tmp/devops-repo/deployment.zip s3://test-1devops/deployment.zip
+      - echo "Build completed on $(date)"
+      - cd /var/www/myapp
+      - pm2 start nodescript.js -f
+      - cd /home/ubuntu
+      - # You can specify your stop script here
+      - # pkill -f "node nodescript.js"
+
 artifacts:
   files:
     - 'appspec.yml'
@@ -25,5 +44,3 @@ artifacts:
     - 'stop_server.sh'
     - 'nodescript.js'
     - 'package.json'
-    
-  
