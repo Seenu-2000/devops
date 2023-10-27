@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/myfiles/
+    destination: /home/ubuntu/task/
 permissions:
   - object: /home/ubuntu
     owner: ubuntu
