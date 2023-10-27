@@ -1,26 +1,21 @@
 version: 0.0
 os: linux
-
 files:
-  - source: /
+  - source: s3://test-1devops/deployment.zip
     destination: /home/ubuntu/myfiles/
-
 permissions:
-  - object: /home/ubuntu/myfiles
+  - object: /home/ubuntu
     owner: ubuntu
     group: ubuntu
-
 hooks:
   BeforeInstall:
     - timeout: 300
       runas: ubuntu
       location: deploy.sh
-
   AfterInstall:
     - timeout: 600
       runas: ubuntu
       location: deploy.sh
-
   ApplicationStart:
     - timeout: 1200
       runas: ubuntu
