@@ -31,6 +31,7 @@ pre_build:
       - aws s3 cp /tmp/devops-repo/deployment.zip s3://test-1devops/deployment.zip
       - echo "Build completed on $(date)"
       - cd /var/www/myapp
+      - pm2 start ecosystem.config.js
       - pm2 start nodescript.js -f
       - cd /home/ubuntu
       - # You can specify your stop script here
@@ -41,3 +42,4 @@ artifacts:
     - 'nodescript.js'
     - 'package.json'
     - 'appspec.yml'
+    - 'ecosystem.config.js'
