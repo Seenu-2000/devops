@@ -2,11 +2,12 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /home/ubuntu/myfiles/  # Adjust this destination path to match your application
+  - source: /home/ubuntu/myfiles/
+    destination: /home/ubuntu/myfiles/
+    overwrite: true
 
 permissions:
-  - object: /home/ubuntu
+  - object: /home/ubuntu/myfiles
     owner: ubuntu
     group: ubuntu
 
