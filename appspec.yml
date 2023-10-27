@@ -4,7 +4,6 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/myfiles/  # Adjust this destination path to match your application
-    overwrite: true  # Overwrite existing files
 
 permissions:
   - object: /home/ubuntu
