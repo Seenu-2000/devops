@@ -13,57 +13,16 @@ permissions:
 
 hooks:
   BeforeInstall:
-    - timeout: 300  # Specify the timeout for the script (adjust as needed)
+    - timeout: 300
       runas: ubuntu
-      content: |
-        #!/bin/bash
-        set -e
-
-        # Update and upgrade the system packages
-        sudo apt-get update
-        sudo apt-get upgrade -y
-
-        # Install Node.js and NPM
-        curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-        sudo apt-get install -y nodejs
+      location: deploy.sh
 
   AfterInstall:
-    - timeout: 600  # Specify the timeout for the script (adjust as needed)
+    - timeout: 600
       runas: ubuntu
-      content: |
-        #!/bin/bash
-        set -e
-
-        # Creating application directory
-        sudo mkdir -p /var/www/myapp
-
-        # Changing owner permission
-        sudo chown -R ubuntu:ubuntu /var/www/myapp
-
-        # move the package.json file to the target directory
-        mv /home/ubuntu/myfiles/package.json /var/www/myapp/
-
-        # Move the nodescript.js file to the target directory
-        mv /home/ubuntu/myfiles/nodescript.js /var/www/myapp
-
-        # Navigate to the target directory
-        cd /var/www/myapp
-
-        # Install Node.js application dependencies using NPM
-        sudo npm install
-
-        # Install PM2 globally (if not already installed)
-        sudo npm install -g pm2
+      location: deploy.sh
 
   ApplicationStart:
-    - timeout: 1200  # Specify the timeout for the script (adjust as needed)
+    - timeout: 1200
       runas: ubuntu
-      content: |
-        #!/bin/bash
-        set -e
-
-        # Navigate to the appropriate directory where nodescript.js is located
-        cd /var/www/myapp
-
-        # Start your Node.js application with PM2, forcing re-execution
-        pm2 start nodescript.js -f
+      location: deploy.sh
