@@ -3,11 +3,11 @@ os: linux
 
 files:
   - source: /
-    destination: /var/www/myapp/  # Adjust this destination path to match your application
+    destination: /home/ubuntu/myfiles/  # Adjust this destination path to match your application
     overwrite: true  # Overwrite existing files
 
 permissions:
-  - object: /var/www/myapp/
+  - object: /home/ubuntu/myfiles/
     owner: ubuntu
     group: ubuntu
 
@@ -41,10 +41,10 @@ hooks:
         sudo chown -R ubuntu:ubuntu /var/www/myapp
 
         # move the package.json file to the target directory
-        mv /home/ubuntu/task/package.json /var/www/myapp/
+        mv /home/ubuntu/myfiles/package.json /var/www/myapp/
 
         # Move the nodescript.js file to the target directory
-        mv /home/ubuntu/task/nodescript.js /var/www/myapp
+        mv /home/ubuntu/myfiles/nodescript.js /var/www/myapp
 
         # Navigate to the target directory
         cd /var/www/myapp
