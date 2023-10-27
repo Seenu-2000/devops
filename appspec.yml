@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: s3://test-1devops/deployment.zip
+  - source: /
     destination: /home/ubuntu/myfiles/
 permissions:
   - object: /home/ubuntu
