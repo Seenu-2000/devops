@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: /*
     destination: /home/ubuntu/task/
 permissions:
   - object: /home/ubuntu
@@ -9,14 +9,16 @@ permissions:
     group: ubuntu
 hooks:
   BeforeInstall:
-    - timeout: 300
+    - location: deploy.sh
+      timeout: 300
       runas: ubuntu
-      location: deploy.sh
+
   AfterInstall:
-    - timeout: 600
+    - location: deploy.sh
+      timeout: 600
       runas: ubuntu
-      location: deploy.sh
+
   ApplicationStart:
-    - timeout: 1200
+    - location: deploy.sh
+      timeout: 1200
       runas: ubuntu
-      location: deploy.sh
