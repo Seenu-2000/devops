@@ -7,6 +7,10 @@ const server = http.createServer((req, res) => {
 
 const port = process.env.PORT || 1000;
 
+server.on('error', (error) => {
+  console.error('Server error:', error);
+});
+
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
