@@ -20,3 +20,5 @@ sudo npm install -g pm2
 # Hook: ApplicationStart
 cd /var/www/myapp
 pm2 start nodescript.js -f
+
+# pm2 restart nodescript.js -f
