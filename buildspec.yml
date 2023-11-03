@@ -1,26 +1,14 @@
 version: 0.2
+
 phases:
-  install:
-    runtime-versions:
-      nodejs: 18  # Use the Node.js version you need
-    commands:
-      - echo Nothing to do in the install phase...
   pre_build:
     commands:
       - git clone https://github.com/Seenu-2000/devops.git /tmp/devops-repo
+
   build:
     commands:
-      - cd /tmp/devops-repo
-      - zip -r deployment.zip .  # Create a ZIP archive of all files in the directory
-  post_build:
-    commands:
-      - aws s3 cp /tmp/devops-repo/deployment.zip s3://test-1devops/deployment.zip  # Upload the ZIP archive to S3
-      - echo Build completed on `date`
+      - aws s3 sync /tmp/devops-repo/ s3://test-1devops --exclude ".git/*" --exclude "task/*"
+
 artifacts:
   files:
-    - 'appspec.yml'
-    - 'nodescript.js'
-    - 'package.json'
-    - 'deploy.sh'
-    
-  
+    - index.html
