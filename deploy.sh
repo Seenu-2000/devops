@@ -21,7 +21,7 @@ sudo npm install -g pm2
 cd /var/www/myapp
 
 # Replace "nodescript" with your desired process name.
-pm2 start nodescript.js --name "nodescript.js"
+pm2 restart nodescript.js --name "nodescript.js"
 
 # pm2 restart nodescript.js --name "nodescript.js"
 
