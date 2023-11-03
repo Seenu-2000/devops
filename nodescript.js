@@ -5,7 +5,7 @@ const server = http.createServer((req, res) => {
   res.end('Hello, People this is Node.js');
 });
 
-const port = process.env.PORT || 1000;
+const port = process.env.PORT || 3000;
 
 server.on('error', (error) => {
   console.error('Server error:', error);
