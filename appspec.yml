@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /home/ssm-user/
+  - source: index.html
+    destination: /home/ssm-user/code/
 permissions:
   - object: /home/ssm-user
     owner: ssm-user
